@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en GifExpertApp Debe de hacer match el shallow con el snapshot 1`] = `
+<Fragment>
+  <h1>
+    GifExpertApp
+  </h1>
+  <hr />
+  <button
+    onClick={[Function]}
+  >
+    Agregar
+  </button>
+  <ol>
+    <li
+      key="Gumball"
+    >
+      Gumball
+    </li>
+    <li
+      key="Hora de aventura"
+    >
+      Hora de aventura
+    </li>
+    <li
+      key="Un show mas"
+    >
+      Un show mas
+    </li>
+  </ol>
+</Fragment>
+`;
