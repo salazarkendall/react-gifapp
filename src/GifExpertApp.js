@@ -9,7 +9,7 @@ const GifExpertApp = () => {
 	 * Para poder hacer un hook mucho mas rapido podemos usar el snippet _ush_ el cual nos crea el hook
 	 * Nota: para poder usar el hook, debemos importar el useState de React
 	 */
-	const [categories, setCategories] = useState(['Gumball']);
+	const [categories, setCategories] = useState(['Death note']);
 
 	/**
 	 * Todos los functional components deben retornar una estructura HTML que sera agregada al DOM

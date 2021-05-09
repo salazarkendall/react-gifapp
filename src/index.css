@@ -21,3 +21,25 @@ input {
 h1 {
 	font-size: 55px;
 }
+.card-grid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.card {
+	align-content: center;
+	border: 1.5px solid rgb(72, 73, 80);
+	border-radius: 6px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	overflow: hidden;
+	/* width: 250px; */
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.383);
+}
+.card p {
+	padding: 5px;
+	text-align: center;
+}
+.card img {
+	max-height: 200px;
+}
