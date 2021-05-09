@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 // Esto es un Functional Component
 const GifExpertApp = () => {
@@ -8,11 +9,7 @@ const GifExpertApp = () => {
 	 * Para poder hacer un hook mucho mas rapido podemos usar el snippet _ush_ el cual nos crea el hook
 	 * Nota: para poder usar el hook, debemos importar el useState de React
 	 */
-	const [categories, setCategories] = useState([
-		'Gumball',
-		'Hora de aventura',
-		'Un show mas',
-	]);
+	const [categories, setCategories] = useState(['Gumball']);
 
 	/**
 	 * Todos los functional components deben retornar una estructura HTML que sera agregada al DOM
@@ -20,12 +17,11 @@ const GifExpertApp = () => {
 	 */
 	return (
 		<>
-			<h1>GifExpertApp</h1>
-			<hr />
+			<h1>GifExpert</h1>
 			<AddCategory setCategories={setCategories} />
 			<ol>
 				{categories.map((category) => {
-					return <li key={category}>{category}</li>;
+					return <GifGrid key={category} category={category} />;
 				})}
 			</ol>
 		</>
