@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
-// Esto es un Functional Component
+/**
+ * Esto es un Functional Component
+ * Es codigo que se puede dividir en elementos dependiendo de su funcionalidad para poder realizar un mejor mantenimiento
+ * Estos reciben por parametro los 'props', los cuales pueden ser de cualquier tipo
+ * Podemos identificar que es un FC porque su valor de retorno es una expresion de JSX (html+js)
+ */
 const GifExpertApp = () => {
 	/**
 	 * Normalmente las constantes que necesitamos que se encuentren en otros componentes, los ponemos dentro de hooks
