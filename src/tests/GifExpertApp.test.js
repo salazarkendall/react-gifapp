@@ -5,7 +5,7 @@
 
 import { shallow } from 'enzyme';
 import React from 'react';
-import { GifExpertApp } from '../GifExpertApp';
+import GifExpertApp from '../GifExpertApp';
 
 describe('Pruebas en GifExpertApp', () => {
 	let wrapper = shallow(<GifExpertApp />);

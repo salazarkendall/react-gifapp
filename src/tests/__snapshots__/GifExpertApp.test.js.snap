@@ -3,30 +3,16 @@
 exports[`Pruebas en GifExpertApp Debe de hacer match el shallow con el snapshot 1`] = `
 <Fragment>
   <h1>
-    GifExpertApp
+    GifExpert
   </h1>
-  <hr />
-  <button
-    onClick={[Function]}
-  >
-    Agregar
-  </button>
+  <AddCategory
+    setCategories={[Function]}
+  />
   <ol>
-    <li
-      key="Gumball"
-    >
-      Gumball
-    </li>
-    <li
-      key="Hora de aventura"
-    >
-      Hora de aventura
-    </li>
-    <li
-      key="Un show mas"
-    >
-      Un show mas
-    </li>
+    <GifGrid
+      category="Death note"
+      key="Death note"
+    />
   </ol>
 </Fragment>
 `;
