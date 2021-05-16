@@ -6,7 +6,7 @@ exports[`Pruebas en GifGridItem Se debe de mostrar el componente correctamente 1
 >
   <img
     alt="Este es solo un titulo de ejemplo"
-    src="google.com"
+    src="url"
   />
   <p>
     Este es solo un titulo de ejemplo
