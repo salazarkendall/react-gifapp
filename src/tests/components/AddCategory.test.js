@@ -1,24 +1,28 @@
 import React from 'react';
+import '@testing-library/jest-dom'; // <- Simplemente para tener autocompletado en nuestro codigo
 
 import { shallow } from 'enzyme';
 import { AddCategory } from '../../components/AddCategory';
 
 describe('Pruebas en AddCategory', () => {
-	const setCategory = () => {};
-	const wrapper = shallow(<AddCategory setCategories={setCategory} />);
-
 	/**
-	 * Nuevamente, el probamos que el componente se renderice de la manera ideal
+	 * Importante: el beforeEach es necesario porque necesitamos que el componente se encuentre 'limpio' a la hora de hacer las pruebas, por lo que declaramos el wrapper fuera de las pruebas pero lo limpiamos cada vez que inicializamos una prueba con el beforeEach.
+	 * Sin embargo, al simplemente declararlo como undefined, perdemos todo tipo de ayuda de vscode, por lo que es mejor declararla como el shallow del componente
 	 */
+
+	const setCategories = jest.fn();
+	let wrapper = shallow(<AddCategory setCategories={setCategories} />);
+
+	beforeEach(() => {
+		jest.clearAllMocks();
+		wrapper = shallow(<AddCategory setCategories={setCategories} />);
+	});
+
 	test('Debe de mostrar el componente correctamente', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	/**
-	 * Esta es una prueba mas compleja en donde simulamos que escribimos en un input
-	 *
-	 */
-	test('Debe de cambiar la caja de texto', () => {
+	test('Debe de cambiar la caja de texto al escribir', () => {
 		// Alojamos el valor de ese input dentro de una constante
 		const input = wrapper.find('input');
 		// Esto es lo que vamos a simular escribir dentro de nuestro input
@@ -32,5 +36,10 @@ describe('Pruebas en AddCategory', () => {
 		 * El valor del siguiente 'p' es igual al que tiene el input, sin embargo este no tiene otra funcion mas que comprobar que nuestro test pasa
 		 */
 		expect(wrapper.find('p').text().trim()).toBe(value);
+	});
+
+	test('No debe de postear la informacion onSubmit si el input.lenght < 2', () => {
+		wrapper.find('form').simulate('submit', { preventDefault() {} });
+		expect(setCategories).not.toHaveBeenCalled();
 	});
 });

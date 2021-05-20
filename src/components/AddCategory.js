@@ -24,7 +24,7 @@ export const AddCategory = ({ setCategories }) => {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
+		console.log('handle_submit: exitoso');
 		if (inputValue.trim().length > 2) {
 			/**
 			 * Como entender el operador spread?
