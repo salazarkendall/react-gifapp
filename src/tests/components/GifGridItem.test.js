@@ -9,7 +9,7 @@ import { GifGridItem } from '../../components/GifGridItem';
 
 describe('Pruebas en GifGridItem', () => {
 	let title = 'Este es solo un titulo de ejemplo';
-	let url = 'google.com';
+	let url = 'url';
 	let wrapper = shallow(<GifGridItem title={title} url={url} />);
 
 	test('Se debe de mostrar el componente correctamente', () => {
