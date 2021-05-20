@@ -2,7 +2,9 @@
 
 exports[`Pruebas en GifGrid Debe de renderizar el componente de manera adecuada 1`] = `
 <Fragment>
-  <h3 />
+  <h3>
+    Death note
+  </h3>
   <p
     className="animate__animated animate__flash"
   >
