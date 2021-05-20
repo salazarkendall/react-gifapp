@@ -20,6 +20,7 @@ export const AddCategory = ({ setCategories }) => {
 	 */
 	const handleInputChange = (e) => {
 		setInputValue(e.target.value);
+		console.log('handleInputChange llamado exitosamente');
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -41,6 +42,8 @@ export const AddCategory = ({ setCategories }) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
+			{/* El siguiente valor solamente sirve para las pruebas */}
+			<p>{inputValue}</p>
 			<input
 				type="text"
 				value={inputValue}
