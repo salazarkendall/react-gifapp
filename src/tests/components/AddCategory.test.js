@@ -42,4 +42,13 @@ describe('Pruebas en AddCategory', () => {
 		wrapper.find('form').simulate('submit', { preventDefault() {} });
 		expect(setCategories).not.toHaveBeenCalled();
 	});
+
+	test('Debe de llamar el setCategories y limpiar la caja de texto', () => {
+		const value = 'Sample text';
+		wrapper.find('input').simulate('change', { target: { value } });
+		wrapper.find('form').simulate('submit', { preventDefault() {} });
+		expect(setCategories).toHaveBeenCalled();
+		expect(setCategories).toHaveBeenCalledTimes(1);
+		expect(wrapper.find('input').prop('value')).toBe('');
+	});
 });
