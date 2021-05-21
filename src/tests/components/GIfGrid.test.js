@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 
 import { shallow } from 'enzyme';
 import { GifGrid } from '../../components/GifGrid';
@@ -6,9 +7,9 @@ import { useFetchGifs } from '../../hooks/useFetchGifs';
 jest.mock('../../hooks/useFetchGifs');
 
 describe('Pruebas en GifGrid', () => {
-	const category = 'Death note';
+	const category = 'One Punch';
 
-	test('Debe de renderizar el componente de manera adecuada', () => {
+	test('Debe de mostrar el componente correctamente', () => {
 		useFetchGifs.mockReturnValue({
 			data: [],
 			loading: true,
@@ -16,15 +17,19 @@ describe('Pruebas en GifGrid', () => {
 
 		const wrapper = shallow(<GifGrid category={category} />);
 		expect(wrapper).toMatchSnapshot();
-		expect(wrapper.find('h3').text().includes(category)).toBe(true);
 	});
 
-	test('Debe de mostrar items cuando se cargan las imagenes usando useFetchGifs', () => {
+	test('Debe de mostrar items cuando se cargan imagenes', () => {
 		const gifs = [
 			{
-				id: 'test',
-				title: 'Todo bien?',
-				url: 'https://localhost.hola',
+				id: 'ABC',
+				url: 'https://localhost/cualquier/cosa.jpg',
+				title: 'Cualquier cosa',
+			},
+			{
+				id: '123',
+				url: 'https://localhost/cualquier/cosa.jpg',
+				title: 'Cualquier cosa',
 			},
 		];
 
@@ -32,7 +37,9 @@ describe('Pruebas en GifGrid', () => {
 			data: gifs,
 			loading: false,
 		});
+
 		const wrapper = shallow(<GifGrid category={category} />);
-		expect(wrapper).toMatchInlineSnapshot();
+		expect(wrapper.find('p').exists()).toBe(false);
+		expect(wrapper.find('GifGridItem').length).toBe(gifs.length);
 	});
 });

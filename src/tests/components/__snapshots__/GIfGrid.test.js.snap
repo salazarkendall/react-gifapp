@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas en GifGrid Debe de renderizar el componente de manera adecuada 1`] = `
+exports[`Pruebas en GifGrid Debe de mostrar el componente correctamente 1`] = `
 <Fragment>
   <h3>
-    Death note
+    One Punch
   </h3>
   <p
     className="animate__animated animate__flash"
