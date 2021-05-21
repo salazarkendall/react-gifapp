@@ -31,6 +31,11 @@ describe('Pruebas en GifGrid', () => {
 				url: 'https://localhost/cualquier/cosa.jpg',
 				title: 'Cualquier cosa',
 			},
+			{
+				id: '321',
+				url: 'https://localhost/cualquier/cosa.jpg',
+				title: 'Cualquier cosa',
+			},
 		];
 
 		useFetchGifs.mockReturnValue({
@@ -39,6 +44,8 @@ describe('Pruebas en GifGrid', () => {
 		});
 
 		const wrapper = shallow(<GifGrid category={category} />);
+
+		// No vamos a evaluar con el snapshot, porque seria una prueba dudosa
 		expect(wrapper.find('p').exists()).toBe(false);
 		expect(wrapper.find('GifGridItem').length).toBe(gifs.length);
 	});
